@@ -1,0 +1,39 @@
+{
+    "name": "techouse/total-records",
+    "description": "A Laravel Nova card that displays the total number of records of a specific model.",
+    "keywords": [
+        "laravel",
+        "nova",
+        "card",
+        "model record count"
+    ],
+    "authors": [
+        {
+            "name": "Klemen Tušar",
+            "email": "techouse@gmail.com"
+        }
+    ],
+    "license": "MIT",
+    "require": {
+        "php": ">=7.1.0",
+        "illuminate/support": "^5.6",
+        "laravel/nova": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Techouse\\TotalRecords\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Techouse\\TotalRecords\\CardServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

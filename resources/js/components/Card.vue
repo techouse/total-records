@@ -1,0 +1,51 @@
+<template>
+    <card class="flex flex-col items-center justify-center">
+        <div class="px-3 py-3">
+            <h1 class="text-center text-3xl text-80 font-light">
+                <b>{{ card.title }}:</b> {{ count | numberFormat }}
+            </h1>
+        </div>
+    </card>
+</template>
+
+<script>
+    export default {
+        filters: {
+            numberFormat(number) {
+                return !isNaN(number) ? Number(number).toLocaleString() : number
+            }
+        },
+
+        props: {
+            card: {
+                type: Object,
+                required: true
+            },
+        },
+
+        data() {
+            return {
+                count: 0,
+                errors: null
+            }
+        },
+
+        mounted() {
+            this.getData()
+        },
+
+        methods: {
+            getData() {
+                Nova.request().get('/nova-vendor/total-records/endpoint/', {
+                    params: {model: this.card.model}
+                })
+                    .then(({data}) => {
+                        this.$set(this, 'count', data.count)
+                    })
+                    .catch(({response}) => {
+                        this.$set(this, 'errors', response.data.errors)
+                    })
+            }
+        }
+    }
+</script>
