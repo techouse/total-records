@@ -17,7 +17,7 @@ class TotalRecordsController extends Controller
     public function handle(NovaRequest $request)
     {
         $this->validate($request, ['model'   => ['bail', 'required', 'min:1', 'string', new ClassExists],
-                                   'expires' => ['nullable', 'date', 'date_format:c']]);
+                                   'expires' => ['nullable', 'date', 'date_format:Y-m-d\TH:i:sP']]);
 
         $model = $request->input('model');
 
