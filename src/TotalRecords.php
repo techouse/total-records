@@ -2,6 +2,7 @@
 
 namespace Techouse\TotalRecords;
 
+use DateTimeInterface;
 use Laravel\Nova\Card;
 
 class TotalRecords extends Card
@@ -17,17 +18,25 @@ class TotalRecords extends Card
     protected $title;
 
     /**
+     * @var
+     */
+    protected $expires;
+
+    /**
      * TotalRecords constructor.
      *
-     * @param string      $model
-     * @param string      $title
-     * @param string|null $component
+     * @param string                  $model
+     * @param string                  $title
+     * @param \DateTimeInterface      $expires
+     * @param string                  $component
      */
-    public function __construct(string $model, ?string $title = null, ?string $component = null)
+    public function __construct(string $model, ?string $title = null, ?DateTimeInterface $expires = null, ?string $component = null)
     {
         $this->model = $model;
 
         $this->title = $title ?? __('Total');
+
+        $this->expires = $expires ? $expires->format('c') : null;
 
         parent::__construct($component);
     }
@@ -55,8 +64,9 @@ class TotalRecords extends Card
     public function jsonSerialize(): array
     {
         return array_merge([
-            'model' => $this->model,
-            'title' => $this->title,
+            'model'   => $this->model,
+            'title'   => $this->title,
+            'expires' => $this->expires,
         ], parent::jsonSerialize());
     }
 }

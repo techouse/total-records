@@ -41,10 +41,13 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                 /**
                   * PARAMETERS:
                   * 
-                  * The 1st parameter is required and represents the model you want to get the total count of.
-                  * The 2nd parameter is the label you want to display in the Nova Card before the model count.
+                  * @param string             $model   required - the model you want to get the total count of
+                  * @param string             $title   optional - the label you want to display in the Nova Card before the model count
+                  * @param \DateTimeInterface $expires optional - the cache expiry time
                   */
-                new TotalRecords(App\Contact::class, __('Total contacts'))
+                new TotalRecords(App\User::class),                                            // minimum required parameters
+                new TotalRecords(App\Event::class, __('Total events')),                       // with custom label
+                new TotalRecords(App\Contact::class, __('Total contacts'), now()->addHour()), // cached for 1 hour
             ];
         }
 }

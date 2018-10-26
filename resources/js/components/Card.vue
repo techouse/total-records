@@ -37,7 +37,10 @@
         methods: {
             getData() {
                 Nova.request().get('/nova-vendor/total-records/endpoint/', {
-                    params: {model: this.card.model}
+                    params: {
+                        model: this.card.model,
+                        expires: this.card.expires
+                    }
                 })
                     .then(({data}) => {
                         this.$set(this, 'count', data.count)
