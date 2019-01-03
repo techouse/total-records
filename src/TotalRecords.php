@@ -64,6 +64,7 @@ class TotalRecords extends Card
     public function jsonSerialize(): array
     {
         return array_merge([
+            'name'    => hash('md4', $this->model . $this->title . $this->expires),
             'model'   => $this->model,
             'title'   => $this->title,
             'expires' => $this->expires,
