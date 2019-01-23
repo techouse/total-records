@@ -1,5 +1,8 @@
 # Total Records
 
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/techouse/total-records.svg?style=flat-square)](https://packagist.org/packages/techouse/total-records)
+[![Total Downloads](https://img.shields.io/packagist/dt/techouse/total-records.svg?style=flat-square)](https://packagist.org/packages/techouse/total-records)
+
 ##### A Laravel Nova card that displays the total number of records of a specific model.
 
 When you simply want to display the total number of some model's database records. Nothing less nothing more.
