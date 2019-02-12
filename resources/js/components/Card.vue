@@ -1,9 +1,9 @@
 <template>
     <card class="total-records flex flex-col items-center justify-center">
         <div class="px-3 py-3">
-            <h1 class="text-center text-3xl text-80 font-light">
+            <h2 class="text-center text-3xl text-80 font-light">
                 <b>{{ card.title }}:</b> {{ count | numberFormat }}
-            </h1>
+            </h2>
             <ul v-if="errors !== null" class="error">
                 <template v-for="key in Object.keys(errors)">
                     <li v-for="(message, index) in errors[key]" :key="`${key}_${index}`">{{ message }}</li>
