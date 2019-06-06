@@ -1,7 +1,9 @@
 # Total Records
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/techouse/total-records.svg?style=flat-square)](https://packagist.org/packages/techouse/total-records)
-[![Total Downloads](https://img.shields.io/packagist/dt/techouse/total-records.svg?style=flat-square)](https://packagist.org/packages/techouse/total-records)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/techouse/total-records.svg?style=flat)](https://packagist.org/packages/techouse/total-records)
+[![Total Downloads](https://img.shields.io/packagist/dt/techouse/total-records.svg?style=flat)](https://packagist.org/packages/techouse/total-records)
+[![Licence](https://img.shields.io/packagist/l/techouse/total-records.svg)](https://packagist.org/packages/techouse/total-records)
+[![PHP version](https://img.shields.io/packagist/php-v/techouse/total-records/dev-master.svg)](https://packagist.org/packages/techouse/total-records)
 
 ##### A Laravel Nova card that displays the total number of records of a specific model.
 
