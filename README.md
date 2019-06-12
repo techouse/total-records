@@ -11,7 +11,6 @@ When you simply want to display the total number of some model's database record
 
 ![Total Records](./screenshot.png)
 
-
 ## Installation
 
 You can install the package in to a Laravel app that uses [Nova](https://nova.laravel.com) via composer:
@@ -45,14 +44,14 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
             return [
                 /**
                   * PARAMETERS:
-                  * 
+                  *
                   * @param string             $model   required - the model you want to get the total count of
                   * @param string             $title   optional - the label you want to display in the Nova Card before the model count
                   * @param \DateTimeInterface $expires optional - the cache expiry time
                   */
-                new TotalRecords(App\User::class),                                            // minimum required parameters
-                new TotalRecords(App\Event::class, __('Total events')),                       // with custom label
-                new TotalRecords(App\Contact::class, __('Total contacts'), now()->addHour()), // cached for 1 hour
+                new TotalRecords(\App\User::class),                                            // minimum required parameters
+                new TotalRecords(\App\Event::class, __('Total events')),                       // with custom label
+                new TotalRecords(\App\Contact::class, __('Total contacts'), now()->addHour()), // cached for 1 hour
             ];
         }
 }
