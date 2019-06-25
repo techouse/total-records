@@ -16,11 +16,14 @@ class TotalRecordsController extends Controller
      */
     public function handle(NovaRequest $request)
     {
-        $this->validate($request, ['model'   => ['bail', 'required', 'min:1', 'string', new ClassExists, new IsSubclassOfModel],
-                                   'expires' => ['nullable', 'date', 'date_format:Y-m-d\TH:i:sP']]);
+        if ($request->input('model')) {
+            $request->merge(['model' => urldecode($request->input('model'))]);
+        }
 
-        // URL Decode the Model Path: https://github.com/techouse/total-records/issues/4#issuecomment-476668876
-        $model = urldecode($request->input('model'));
+        $request->validate(['model'   => ['bail', 'required', 'min:1', 'string', new ClassExists, new IsSubclassOfModel],
+                            'expires' => ['nullable', 'date', 'date_format:Y-m-d\TH:i:sP']]);
+
+        $model = $request->input('model');
 
         $cacheKey = hash('md4', $model . (int)(bool)$request->input('expires'));
 
