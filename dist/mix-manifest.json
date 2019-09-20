@@ -1,4 +1,4 @@
 {
-    "/js/card.js": "/js/card.js?id=5593b5b678c3054738b6",
-    "/css/card.css": "/css/card.css?id=d6bfa41d00c1c84a94ab"
+  "card.css": "/nova-vendor/total-records/css/card.css",
+  "card.js": "/nova-vendor/total-records/js/card.js"
 }

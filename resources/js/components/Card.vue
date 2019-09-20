@@ -6,7 +6,9 @@
             </h2>
             <ul v-if="errors !== null" class="error">
                 <template v-for="key in Object.keys(errors)">
-                    <li v-for="(message, index) in errors[key]" :key="`${key}_${index}`">{{ message }}</li>
+                    <li v-for="(message, index) in errors[key]" :key="`${key}_${index}`">
+                        {{ message }}
+                    </li>
                 </template>
             </ul>
         </div>
@@ -41,17 +43,17 @@
 
         methods: {
             getData() {
-                Nova.request().get('/nova-vendor/total-records/endpoint/', {
+                Nova.request().get("/nova-vendor/total-records/endpoint/", {
                     params: {
                         model: this.card.model,
                         expires: this.card.expires
                     }
                 })
                     .then(({data}) => {
-                        this.$set(this, 'count', data.count)
+                        this.$set(this, "count", data.count)
                     })
                     .catch(({response}) => {
-                        this.$set(this, 'errors', response.data.errors)
+                        this.$set(this, "errors", response.data.errors)
                     })
             }
         }
