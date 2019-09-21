@@ -5,6 +5,7 @@
 [![Licence](https://img.shields.io/packagist/l/techouse/total-records.svg)](https://packagist.org/packages/techouse/total-records)
 [![PHP version](https://img.shields.io/packagist/php-v/techouse/total-records/dev-master.svg)](https://packagist.org/packages/techouse/total-records)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/ac8d5e664bf647f398421bac5efc02c7)](https://www.codacy.com/manual/techouse/total-records?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=techouse/total-records&amp;utm_campaign=Badge_Grade)
+[![GitHub stars](https://img.shields.io/github/stars/techouse/total-records.svg?style=social&label=Star&maxAge=2592000)](https://github.com/techouse/total-records/stargazers)
 
 
 ##### A Laravel Nova card that displays the total number of records of a specific model.
