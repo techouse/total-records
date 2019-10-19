@@ -19,21 +19,21 @@
     export default {
         filters: {
             numberFormat(number) {
-                return !isNaN(number) ? Number(number).toLocaleString() : number
-            }
+                return !Number.isNaN(number) ? Number(number).toLocaleString() : number
+            },
         },
 
         props: {
             card: {
                 type: Object,
-                required: true
+                required: true,
             },
         },
 
         data() {
             return {
                 count: 0,
-                errors: null
+                errors: null,
             }
         },
 
@@ -46,16 +46,16 @@
                 Nova.request().get("/nova-vendor/total-records/endpoint/", {
                     params: {
                         model: this.card.model,
-                        expires: this.card.expires
-                    }
+                        expires: this.card.expires,
+                    },
                 })
-                    .then(({data}) => {
+                    .then(({ data }) => {
                         this.$set(this, "count", data.count)
                     })
-                    .catch(({response}) => {
+                    .catch(({ response }) => {
                         this.$set(this, "errors", response.data.errors)
                     })
-            }
-        }
+            },
+        },
     }
 </script>
