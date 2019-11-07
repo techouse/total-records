@@ -2,13 +2,16 @@
 
 namespace Techouse\TotalRecords;
 
-use App\Http\Controllers\Controller;
+use Illuminate\Foundation\Validation\ValidatesRequests;
+use Illuminate\Routing\Controller;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Cache;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
 class TotalRecordsController extends Controller
 {
+    use ValidatesRequests;
+
     /**
      * @param \Laravel\Nova\Http\Requests\NovaRequest $request
      * @return \Illuminate\Http\JsonResponse
